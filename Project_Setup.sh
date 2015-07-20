@@ -31,10 +31,10 @@ mkdir /home/$username/scripts/Slurm_scripts/$jobname
 mkdir /home/$username/scripts/Shell_scripts/$jobname
 mkdir /home/$username/scripts/Ins_files/$jobname
 mkdir /mnt/lustrefs/work/$username/Output_$jobname
-# mkdir /mnt/lustrefs/store/$username/Gridlists/$jobname
+mkdir /mnt/lustrefs/store/$username/Gridlists/$jobname
 
 # copy master subset script into appropriate folder
-cp Master_Subset.sh Subset_scripts/$jobname$subset.sh
+cp Master_Subset.sh $jobname$subset.sh
 # copy master slurm script into appropriate folder
 cp Master_Slurm.sh Slurm_scripts/$jobname/$jobname$slurm.sh
 # copy master shell script into appropriate folder
@@ -42,6 +42,8 @@ cp Master_Shell.sh Shell_scripts/$jobname/$jobname$shell.sh
 # copy ins file into appropriate folder
 cp Master.ins Ins_files/$jobname/$jobname$ins.ins
 
-# EDIT MASTER SUBSET SCRIPT
+# change project name in new subset script
+sed -i s/"replacethis"/"$jobname"/g $jobname$subset.sh
+
 # EDIT MASTER INS FILE 
 # RECORD PROJECT META IN SPREADSHEET
