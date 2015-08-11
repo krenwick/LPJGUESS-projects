@@ -16,9 +16,9 @@
 
 # CHANGE THESE VALUES
 username="katie.renwick"
-jobname="Wusa2_ARTR_CRU"
+jobname="Wusa2_CRU4"
 nprocs=32
-nnodes=1
+nnodes=4
 
 # These stay the same
 subset="_Subset"
@@ -49,5 +49,13 @@ sed -i s/"replacethis"/"$jobname"/g $jobname$subset.sh
 sed -i s/"replacethis"/"$jobname"/g Slurm_scripts/$jobname/$jobname$slurm.sh
 
 
-# EDIT MASTER INS FILE 
-# RECORD PROJECT META IN SPREADSHEET
+# change nprocs and nnodes in subset_jobs script
+sed -i s/"nnodes=1"/"nnodes=$nnodes"/g Slurm_scripts/$jobname/$jobname$slurm.sh $jobname$subset.sh
+
+
+# 1. EDIT MASTER INS FILE in newly-created folder
+# 2. RECORD PROJECT META IN SPREADSHEET
+# 3. Run newly-created subset_jobs script
+# 4. CD into Slurm_scripts/jobname
+# 5. submit jobs using sbatch
+
