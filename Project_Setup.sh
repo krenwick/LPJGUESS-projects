@@ -16,9 +16,10 @@
 
 # CHANGE THESE VALUES
 username="katie.renwick"
-jobname="Wusa2_CRU4"
+jobname="GISSMnewSWP"
 nprocs=32
-nnodes=4
+nnodes=1
+
 
 # These stay the same
 subset="_Subset"
@@ -55,6 +56,7 @@ sed -i s/"nnodes=1"/"nnodes=$nnodes"/g Slurm_scripts/$jobname/$jobname$slurm.sh 
 
 # 1. EDIT MASTER INS FILE in newly-created folder
 # 2. RECORD PROJECT META IN SPREADSHEET
+# 2. add gridlists
 # 3. Run newly-created subset_jobs script
 # 4. CD into Slurm_scripts/jobname
 # 5. submit jobs using sbatch
