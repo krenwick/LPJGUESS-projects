@@ -52,7 +52,7 @@ rsync -avP /mnt/lustrefs/store/katie.renwick/Climate_LPJGUESS/CO2 /local/LPJGUES
 rsync -avP /mnt/lustrefs/store/katie.renwick/Soil_LPJGUESS/CRUsize_code4 /local/LPJGUESS_temp_KR
 
 # Copy gridlists 
-rsync -avP /mnt/lustrefs/store/katie.renwick/Gridlists/$projectname /local/LPJGUESS_temp_KR
+rsync -avP /mnt/lustrefs/store/katie.renwick/Gridlists/gridfolder /local/LPJGUESS_temp_KR
 
 # Copy LPJGUESS executable
 rsync -avP /home/katie.renwick/scripts/LPJGUESS/model/modules/guess /local/LPJGUESS_temp_KR

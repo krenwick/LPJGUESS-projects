@@ -16,7 +16,8 @@
 
 # CHANGE THESE VALUES
 username="katie.renwick"
-jobname="GISSMnewSWP"
+jobname="wetdays21"
+gridlist="Wusa2_32lon"
 nprocs=32
 nnodes=1
 
@@ -48,6 +49,9 @@ sed -i s/"replacethis"/"$jobname"/g $jobname$subset.sh
 
 # change project name in new slurm script
 sed -i s/"replacethis"/"$jobname"/g Slurm_scripts/$jobname/$jobname$slurm.sh
+
+# change gridlist folder in new slurm script
+sed -i s/"gridfolder"/"$gridlist"/g Slurm_scripts/$jobname/$jobname$slurm.sh
 
 
 # change nprocs and nnodes in subset_jobs script
