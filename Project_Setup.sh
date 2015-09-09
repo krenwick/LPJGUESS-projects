@@ -33,7 +33,6 @@ mkdir /home/$username/scripts/Slurm_scripts/$jobname
 mkdir /home/$username/scripts/Shell_scripts/$jobname
 mkdir /home/$username/scripts/Ins_files/$jobname
 mkdir /mnt/lustrefs/work/$username/Output_$jobname
-mkdir /mnt/lustrefs/store/$username/Gridlists/$jobname
 
 # copy master subset script into appropriate folder
 cp -p Master_Subset.sh $jobname$subset.sh
