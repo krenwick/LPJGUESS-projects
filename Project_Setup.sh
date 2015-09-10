@@ -16,10 +16,10 @@
 
 # CHANGE THESE VALUES
 username="katie.renwick"
-jobname="wetdays21"
-gridlist="Wusa2_32lon"
+jobname="Gallpft"
+gridlist="Wusa2_128"
 nprocs=32
-nnodes=1
+nnodes=4
 
 
 # These stay the same
@@ -45,6 +45,9 @@ cp -p Master.ins Ins_files/$jobname/$jobname$ins.ins
 
 # change project name in new subset script
 sed -i s/"replacethis"/"$jobname"/g $jobname$subset.sh
+
+# change gridlist folder in new subest script
+sed -i s/"gridfolder"/"$gridlist"/g $jobname$subset.sh
 
 # change project name in new slurm script
 sed -i s/"replacethis"/"$jobname"/g Slurm_scripts/$jobname/$jobname$slurm.sh
