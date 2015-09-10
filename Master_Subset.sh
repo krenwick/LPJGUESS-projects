@@ -73,7 +73,7 @@ counter=1
 	# Edit the ins file to read the correct gridlist
 	cp Ins_files/$projectname/$projectname'_Master.ins' Ins_files/$projectname/Subset_$index/Wusa$number.ins
 	sed -i '11d' Ins_files/$projectname/Subset_$index/Wusa$number.ins #Delete line
-	sed -i '11i param "file_gridlist" (str "'$projectname'/'$number'_Wusa.txt")' Ins_files/$projectname/Subset_$index/Wusa$number.ins #Add new line
+	sed -i '11i param "file_gridlist" (str "'gridfolder'/'$number'_Wusa2.txt")' Ins_files/$projectname/Subset_$index/Wusa$number.ins #Add new line
 	
 	# Edit the ins file to create a new output file
 	sed -i '39d' Ins_files/$projectname/Subset_$index/Wusa$number.ins #Delete line
